@@ -8,26 +8,30 @@
  * @author Uncle Cheese <unclecheese@leftandmain.com>
  * @package  silverstripe-reflection-templates
  */
-class EmailReflectionTemplate extends ReflectionTemplate {
+class EmailReflectionTemplate extends ReflectionTemplate
+{
 
-	/**
-	 * Gets all the template accessors and caches the result
-	 * @return array
-	 */
-	public function getTemplateAccessors() {
-		if($this->templateAccessors) return $this->templateAccessors;
+    /**
+     * Gets all the template accessors and caches the result
+     * @return array
+     */
+    public function getTemplateAccessors()
+    {
+        if ($this->templateAccessors) {
+            return $this->templateAccessors;
+        }
 
-		$vars = parent::getTemplateAccessors();
+        $vars = parent::getTemplateAccessors();
 
-		return $this->templateAccessors = array_merge($vars, array (
-			'To',
-			'Cc',
-			'Bcc',
-			'From',
-			'Subject',
-			'Body',
-			'BaseURL',
-			'IsEmail'
-		));
-	}
+        return $this->templateAccessors = array_merge($vars, array(
+            'To',
+            'Cc',
+            'Bcc',
+            'From',
+            'Subject',
+            'Body',
+            'BaseURL',
+            'IsEmail'
+        ));
+    }
 }
